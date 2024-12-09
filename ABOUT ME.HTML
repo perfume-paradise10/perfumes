@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    body{
+        font-family: "Arial,sans-serif";
+        margin: 0;
+        padding: 0;
+        color: #bcccc7;  
+        scroll-behavior: smooth;
+    }
+    header{
+        background: pink;
+        background-image:url(web.webp);
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 10px 20px 50px 0px;
+        position: relative;
+        
+    }
+    header .hero h1 span{
+        font-size: 40px;
+        color: white;
+    }
+    header .hero p{
+        font-size:23px;
+    }
+    header .btn{
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background:#d90c08;
+        color:black;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s ease,transform 0.3s ease;
+    }
+    header .btn:hover{
+        
+        color: black;
+        transform: scale(1.1);
+    }
+
+    header .btn:hover{
+        background-color:pink;
+    }
+    .btn{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, algerian;
+    }
+
+
+    .user-need{
+        display:flex;
+        justify-content:flex-end;
+        
+    }
+    .user-need a{
+        text-decoration:none;
+    }
+   
+    nav ul{
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        background:  rgb(177, 150, 161);
+    
+    }
+    nav ul li{
+        margin:0 45px;
+       
+        
+    }
+    nav ul li a{
+        color: rgb(255, 246, 246);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color o.3s ease;
+        font-size: 25px;
+    }
+    nav ul li a:hover{
+        color: black;
+    }
+    .section{
+        padding: 50px 20px;
+        text-align: center;
+        background: pink;
+        border: 2px solid black;
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slidein 1s ease-in-out forwards;
+    }
+    .projects{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+    .projects h3{
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+    }
+    h2{
+        color: black;
+    }
+    p{
+        color: rgb(0, 0, 0);
+        font-size: 19px;
+    }
+    .project-card{
+        background: pink;
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: bisque;
+        transition: transform 0.9 ease,box-shadow 0.6s ease;
+        width: 300px;
+    }
+    .hero a{
+        color:white;
+    }
+   
+    .project-card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgb(0,0,0,0.2);
+    }
+    @keyframes fadein{
+        from{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slidein{
+        from{
+            opaity:0;
+            transform: translateY(30px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    footer{
+        background: pink;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    @media(max-width:768px){
+        .projects{
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-card{
+        width: 90%;
+    }
+    }
+    .section slide-in p{
+        font-size: 15px;
+        background: white;
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <header>
+
+        <div class="user-need">
+            <a href="Log in.html"><p>LogIn</p></a>
+            &nbsp; <p>/</p> &nbsp;
+            <a href="Register.html"><p>Register</p></a>
+        </div>
+
+
+        <div class="hero">
+            <h1 class="fade-in">Hi it's me <span>STEPERFUME</span></h1>
+            <p class="fade-in">Here in STEPERFUME PARADICE were all about spreading positivity and discovery the sweetess moments in life</p>
+            <a href="#about" class="btn">Discover More</a>
+        </div>
+    </header>
+    <nav>
+       <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+       </ul>
+    </nav>
+    <section id="about" class="section slide-in">
+        <h2>About me</h2> 
+        <p>I'm the go-to guide for navigating an enchanting world of scents.</p>
+    </section>
+    <section id="projects" class="section slide-in">
+        <h2>How to know about perfume?</h2>
+        <div class="projects">
+            <div class="project-card hover-grow">
+                <h3>Step 1</h3>
+                <p>Embrace the essence of a blooming garden with STEPERFUME.</p>
+            </div>
+            <div class="project-card hover-grow">
+                <h3>Step 2</h3>
+                <p>Make you fresh and smell good</p>
+            </div>
+            <div class="project-card hover-grow">
+                <h3>Step 3</h3>
+                <p>It spread weakness in every scent.</p>
+            </div> 
+        </div>
+    </section>
+    <section id="contact" class="section slide-in">
+        <h2>Contact Us</h2>
+        <p>Phone: +63 9261077134</p>
+        <p>Email: theaniee_qtie@gmail.com</p>
+        <p>Address: Masaya Norte,San Agustin, Isabela</p>
+    </section>
+    <footer>
+        <p>ALL Rights Reserved 2024.</p>
+    </footer>
+</body>
+</html>

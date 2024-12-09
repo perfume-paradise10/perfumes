@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <style>
+        body {
+            font-family: Algerian, Helvetica, sans-serif;
+            margin: 0px 80px 0px 80px;
+            padding: 0;
+            background-color: #f5f4f4;
+        }
+
+        .container {
+            background-color: #efc8e8;
+        }
+
+        .header {
+            background-color: #efc8e8;
+            color: black;
+            padding: 1px;
+            text-align: center;
+            align-content: center;
+            margin: 0 0% 0 0%;
+
+        }
+
+        .nav {
+            background-color: rgb(177, 150, 161);
+            overflow: hidden;
+        }
+
+        .nav a {
+            position: relative;
+            color: rgb(245, 240, 240);
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            text-align: center;
+            font-weight: 400;
+
+
+        }
+
+        .nav a:hover {
+            background-color: lightpink;
+            color: black;
+        }
+
+        .main {
+            padding: 20px;
+            text-align: center;
+
+
+        }
+
+        .footer {
+            background-color: rgb(159, 136, 147);
+            color: #f8f4f4;
+            text-align: center;
+            padding: 10px 0PX;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+
+
+        }
+
+
+
+        .gallery {
+            perspective: 1000px;
+        }
+
+        .gallery-container {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+        }
+
+        .gallery-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-image:nth-child(1) {
+            transform: rotateY(0deg);
+        }
+
+        .gallery-image:nth-child(2) {
+            transform: rotateY(90deg);
+        }
+
+        .gallery-image:nth-child(3) {
+            transform: rotateY(180deg);
+        }
+
+        .gallery-image:nth-child(4) {
+            transform: rotateY(-90deg);
+        }
+
+        @keyframes rotate {
+            0% {
+                trasform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            margin-top: 100px;
+            gap: 19px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            width: 150px;
+            height: 150%;
+            
+
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.3)
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10px;
+            padding: 1px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: auto;
+        }
+
+        .thumbnail:hover .description {
+            opacity: 2;
+        }
+    </style>
+</head>
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header" img src="LOGO.jpg">
+            <h1> STEPERFUME'S PARADISE</h1>
+        </div>
+        <div class="nav">
+            <center>
+                <a href="NUESTRO.html">Home</a>
+                <a href="#Products">Products</a>
+                <a href="ABOUT ME.HTML">About Me</a>
+            </center>
+        </div>
+
+        <div class="gallery">
+            <CENTER>
+                <div class="gallery-container">
+                    <div class="gallery-image">
+                        <img src="Bleu.png" alt="bleu">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="britney spears fantasy.png" alt="britney spears fantasy">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="burberry.png" alt="burberry">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="dior addict.png" alt="dior addict">
+            </CENTER>
+
+        </div>
+    </div>
+    </div>
+    <div class="thumbnail-gallery">
+        <div class="thumbnail"><a href="PERFUME 1.HTML"><img src="bvlagari.png" alt="thumbnail 1"></a>
+            <div class="description">bvlagari<br></div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 5.HTML"><img src="calvin klein.png" alt="thumbnail 2"></a>
+            <div class="description">calvin klein<br></div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 19.HTML"><img src="channel.png" alt="thumbnail 3"></a>
+            <div class="description">channel</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 3.HTML"><img src="burberry.png" alt="thumbnail 4"></a>
+            <div class="description">burberry</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 4.HTML"><img src="dior addict.png" alt="thumbnail 5"></a>
+            <div class="description">dior addict</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 29.HTML"><img src="eternity.png" alt="thumbnail 6"></a>
+            <div class="description">eternity</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 17. html.html"><img src="flowerbomb.png" alt="thumbnail 7"></a>
+            <div class="description">flowerbomb</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 6.HTML"><img src="hermes.png" alt="thumbnail 8"></a>
+            <div class="description">hermes</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 7.HTML"><img src="la nuit.png" alt="thumbnail 9"></a>
+            <div class="description">la nuit</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 8.HTML"><img src="light blue.png" alt="thumbnail 10"></a>
+            <div class="description">light blue</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 18.HTML"><img src="l'or .png" alt="thumbnail 11"></a>
+            <div class="description">l'or</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 13.HTML"><img src="victoria secret bombshell.png"
+                    alt="thumbnail 12"></a>
+            <div class="description">victoria secret bombshell</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 20.HTML"><img src="paco rabanne.png" alt="thumbnail 13"></a>
+            <div class="description">paco rabanne</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 21.HTML"><img src="oh,lola.png" alt="thumbnail 14"></a>
+            <div class="description">oh,lola</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 9.HTML"><img src="rihanna.png" alt="thumbnail 16"></a>
+            <div class="description">rihanna</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 10.HTML"><img src="robe noire.png" alt="thumbnail 17"></a>
+            <div class="description">robe noire</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 11.HTML"><img src="roja.png" alt="thumbnail 19"></a>
+            <div class="description">roja</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 12.HTML"><img src="sort prada.png" alt="thumbnail 20"></a>
+            <div class="description">sort prada</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 23.HTML"><img src="sweet.png" alt="thumbnail 21"></a>
+            <div class="description">sweet</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 24.HTML"><img src="sweetheart.png" alt="thumbnail 22"></a>
+            <div class="description">sweetheart</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 25.HTML"><img src="vera wang.png" alt="thumbnail 23"></a>
+            <div class="description">vera wang</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 26.HTML"><img src="yves saint.png" alt="thumbnail 24"></a>
+            <div class="description">yves saint</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 16.HTML"><img src="cloud ariana grande.png" alt="thumbnail 25"></a>
+            <div class="description">cloud ariana grande</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 27.HTML"><img src="versace euro (3).png" alt="thumbnail 26"></a>
+            <div class="description">versace euro (3).png</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 22.HTML"><img src="prada.png" alt="thumbnail 27"></a>
+            <div class="description">prada.png</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 14.HTML"><img src="exnihilo.png" alt="thumbnail 28"></a>
+            <div class="description">exnihilo</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 15.HTML"><img src="anitdote.png" alt="thumbnail 29"></a>
+            <div class="description">antidote</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 30.HTML"><img src="tom ford black orchid.png" alt="thumbnail 30"></a>
+            <div class="description">tom ford black orchid</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 2.HTML"><img src="britney spears fantasy.png" alt="thumbnail 31"></a>
+            <div class="description">britney spears fantasy</div>
+        </div>
+        <div class="thumbnail"><a href="PERFUME 28.HTML"><img src="gotchi guilty (2).png" alt="thumbnail 32"></a>
+            <div class="description">gotchi guilty</div>
+        </div>
+
+        <div class="content"> </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>

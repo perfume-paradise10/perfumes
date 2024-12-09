@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <style>
+        body {
+            font-family: 'Playfair Display',serif;
+            padding: 0;
+            background-color: #ABD6EB;
+            margin: 0;
+        }
+        .header {
+            background-color:rgb(240, 247, 248);
+            color: #109fc3;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 2;
+            font-family: 'Playfair Display',serif;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #109fc3;
+        }
+        .nav a {
+            position: relative;
+            display: flex;
+            color: #fff;
+            padding: 20px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: #ABD6EB;
+            color:rgb(13, 33, 254); 
+	        transform: scale(1.1);
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .content{
+            width: 70%;
+            margin: 70px auto;
+        }
+        #outerbox {
+            width: 450px;
+            overflow: hidden;
+            border-radius: 10px;
+            float:right;
+            margin: 0px 0 20px 60px;
+        }
+
+        #sliderbox {
+            position: relative;
+            display: flex;
+            width: 4500px;
+            height: 450px;
+            animation: slider 30s infinite;
+        }
+        #sliderbox img {
+            width: 450px;
+            height: 450px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .open-modal {
+            padding: 10px 15px;
+            background-color:#f4f4f4;
+            color: rgb(26, 25, 25);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .open-modal:hover {
+            background-color:#000000;
+            color: rgb(245, 235, 235);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .modal-toggle {
+            display: none;
+        }
+
+        .modal-toggle:checked+.modal {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 5px 10px 10px;
+        
+            text-align: center;
+        }
+        label1 {
+            margin: 5px 10px 10px;
+        
+            text-align: end;
+        }
+        
+
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color:#179cdf;
+            border: none;
+            padding: 10px;
+            color: #f1ebeb;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #109fc3;
+            color: #000000;
+        }
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .register-link a {
+            background-color: #109fc3;
+            color: #f0f3f6;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: none;
+        }
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            border: none;
+            overflow: hidden;
+        }
+
+        @keyframes slider {
+
+            0%,
+            10% {
+                left: 0;
+            }
+
+            12.5%,
+            22.5% {
+                left: -450px;
+            }
+
+            25%,
+            35% {
+                left: -900px;
+            }
+
+            37.5%,
+            47.5% {
+                left: -1350px;
+            }
+
+            50%,
+            60% {
+                left: -1800px;
+            }
+
+            62.5%,
+            72.5% {
+                left: -2250px;
+            }
+
+            75%,
+            85% {
+                left: -2700px;
+            }
+
+            87.5%,
+            97.5% {
+                left: -3150px;
+            }
+
+            100% {
+                left: -3600px;
+            }
+        }
+        .info{
+            padding: 170px;
+            margin-top: 50px;
+        }
+        .info p{
+            display: flex;
+            text-align: justify;
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-size: 17px;
+            border-radius: 10px;
+            margin-top: 40px 50px 0 0 ;
+        }
+        .info h2{
+            font-size: 35px;
+            margin: 0 0 10px 0;
+        }
+        .footer {
+            background-color: #f1f3f4;
+            color: #201f1f;
+            text-align: center;
+            padding: 2px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="logo.png" height="90px" width="260px">
+        </div>
+       
+    <div class="nav">
+        <a href="CRIBOTICS.html">Home</a>
+        <a href="PRODUCTS.html">Products</a>
+        <a href="Category.html">Category</a>
+        <a href="About.html">About</a>
+        <label for="modal-toggle" class="open-modal">Login</label>
+        <input type="checkbox" id="modal-toggle" class="modal-toggle">
+        <div class="modal">
+            <div class="modal-content">
+                <label for="modal-toggle" class="close">&times;</label>
+                <h2>Log-in Form </h2>
+                <form>
+                   
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username:</label>
+                   
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password:</label>
+                    <button type="submit">Submit</button>
+                    <div class="register-link">
+                        <a href="register.html">Register here!</a>
+                    </div>
+                  
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <main>
+    <div class="content">
+        <div id="outerbox">
+        <div id="sliderbox">
+            <img src="Lovot.png">
+            <img src="Emys.png">
+            <img src="Fable.png">
+            <img src="Kuri.png">
+            <img src="Lego WeDo 2.0.png">
+            <img src="Aibo.png">
+            <img src="Vector.png">
+            <img src="Slothbot.png">
+            <img src="Robonaut.png">
+        </div>
+        </div>
+    </div>
+    <div class="info">
+        <h1>"Beep boop! prepare to be amaze in the future."</h1>
+        <p>Learn It,Enjoy it PLay It.</p>
+      </div>
+    </main>
+    <div class="footer">
+        <p>&copyCopyright 2024. All Rights Reserved.</p>
+    </div> 
+</div>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <style>
+        body {
+            font-family: Algerian;
+            margin: 0px 200px 0px 200px;
+            padding: 0
+            background-color: #bcccc7;
+        }
+        .container {
+            background-color: white;
+        }
+        .header {
+            background-color: pink;
+            color: #0707075d;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: lightgrey;
+        }
+        .nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: lightpink;
+        }
+        .main {
+            padding: 20px;
+            text-align: center;
+            
+            
+        }
+        .box{
+            background-color: pink;
+            color: #0707075d;
+            padding: 10px 0;
+            text-align: center;
+
+        }
+        .footer {
+            background-color: lightpink;
+            color: #0d0d0d;
+            text-align: center;
+            padding: 10px 0PX;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+           
+            
+        }
+        .content{
+            width: 100%;
+            height: 230px;
+        }
+
+        #outerbox {
+            width: 450px;
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center; 
+            width: 450px;
+            margin: 50px auto;
+            box-shadow: 10px 15px 20px red (255, 0, 43);  
+
+        }
+
+        #sliderbox {
+            position: relative;
+            display: flex;
+            width: 4500px;
+            height: 450px;
+            animation: slider 45s infinite;
+        }
+
+.open-modal {
+    padding: 10px 15px;
+    background-color: lightgrey;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.open-modal:hover {
+    background: lightpink;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.modal-toggle {
+    display: none;
+}
+
+.modal-toggle:checked+.modal {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 5px 10px 10px;
+
+    text-align: center;
+}
+label1 {
+    margin: 5px 10px 10px;
+
+    text-align: end;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    border: none;
+    padding: 10px;
+    color: #f4f4f4;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+        @keyframes slider {
+
+            0%,
+            10% {
+                left: 0;
+            }
+
+            12.5%,
+            22.5% {
+                left: -450px;
+            }
+
+            25%,
+            35% {
+                left: -900px;
+            }
+
+            37.5%,
+            47.5% {
+                left: -1350px;
+            }
+
+            50%,
+            60% {
+                left: -1800px;
+            }
+
+            62.5%,
+            72.5% {
+                left: -2250px;
+            }
+
+            75%,
+            85% {
+                left: -2700px;
+            }
+
+            87.5%,
+            97.5% {
+                left: -3150px;
+            }
+
+            100% {
+                left: -3600px;
+            }
+        }
+
+        #sliderbox img {
+            width: 450px;
+            height: 450px;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="header">
+        <img src="Logo estep.png" height="90px" width="260px">
+    </div>
+    <div class="nav">
+        <a href="#home">Home</a>
+        <a href="ESTEFANIENUESTRO ACTIVITY.html">Products</a>
+        <a href="ABOUT ME.HTML">About Us</a>
+        <label for="modal-toggle" class="open-modal">Login</label>
+    <input type="checkbox" id="modal-toggle" class="modal-toggle">
+    <div class="modal">
+        <div class="modal-content">
+            <label for="modal-toggle" class="close">&times;</label>
+            <h2>Log-in Form</h2>
+            <form>
+               
+                <input type="text" id="username" name="username" required>
+                <label for="username">Username</label>
+               
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+                <button type="submit">Submit</button>
+                <div class="Register-link"></div>
+             <a href="Log In.html" >Log in</a>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <div class="box">
+        "Inhale confidence, Exhale elegance"
+    </div>
+    <div class="main">
+        <h2>Costumer's welcome</h2>
+    </div>
+    <div id="outerbox">
+        <div id="sliderbox">
+    
+        <img src="me bench 1.jpg" height="300px" width="300px">
+        <img src="me bench 2.jpg" height="300px" width="300px"> 
+        <img src="me bench 3.jpg" height="300px" width="300px">
+        <img src="me bench 4.jpg" height="300px" width="300px">
+        <img src="me bench 5.jpg" height="300px" width="300px">
+        <img src="victoria secret 6.jpg" height="300px" width="300px">
+        <img src="victoria secret 7.jpg" height="300px" width="300px">
+        <img src="victoria secret 8.jpg" height="300px" width="300px">
+        <img src="victoria secret 9.jpg" height="300px" width="300px">
+        <img src="victoria secret 10.jpg" height="300px" width="300px">
+        </div>
+    <div class="content"> </div>
+    <div class="footer"
+        <p>&copyCopyright 2024. All Rights Reserved.</p>
+    </div> 
+</div>
+  </body>
+</html>
+
